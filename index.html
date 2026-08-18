@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Vela Studio is a responsive static e-commerce storefront with product filters and a cart UI."
+    />
+    <title>Vela Studio | Modern Essentials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="header">
+        <div class="container header-inner">
+          <button class="menu-toggle" aria-label="Open menu" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <a href="#home" class="brand" aria-label="Vela Studio home">
+            <span class="brand-mark">V</span>
+            <span>VELA</span>
+          </a>
+
+          <nav class="main-nav" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#new">New Arrivals</a>
+            <a href="#offers">Offers</a>
+          </nav>
+
+          <div class="header-actions">
+            <label class="search-box" aria-label="Search products">
+              <span class="search-icon">⌕</span>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search products"
+                aria-label="Search products"
+              />
+            </label>
+
+            <button id="cartToggle" class="cart-button" type="button" aria-label="Open cart">
+              <span>Cart</span>
+              <span id="cartCount" class="cart-count" aria-live="polite">0</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="home">
+        <section class="hero">
+          <div class="container hero-inner">
+            <div class="hero-copy">
+              <p class="eyebrow">Fresh arrivals · style made simple</p>
+              <h1>Upgrade your everyday look with modern essentials.</h1>
+              <p class="hero-text">
+                Discover elevated staples designed for comfort, confidence, and effortless daily wear.
+              </p>
+              <div class="hero-actions">
+                <a href="#shop" class="primary-btn">Shop Now</a>
+                <a href="#offers" class="secondary-btn">Explore Deals</a>
+              </div>
+              <ul class="hero-stats" aria-label="Store highlights">
+                <li><strong>12k+</strong><span>Happy shoppers</span></li>
+                <li><strong>4.8/5</strong><span>Customer rating</span></li>
+                <li><strong>48h</strong><span>Fast dispatch</span></li>
+              </ul>
+            </div>
+
+            <div class="hero-visual" aria-label="Featured collection preview">
+              <div class="feature-card card-main">
+                <img
+                  src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80"
+                  alt="Woman wearing a stylish beige coat"
+                />
+              </div>
+              <div class="feature-card card-mini">
+                <div>
+                  <p>New Drop</p>
+                  <strong>Urban Layers</strong>
+                </div>
+                <span>30% OFF</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="catalog" id="shop">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow eyebrow-dark">Curated collection</p>
+                <h2>Shop the latest essentials</h2>
+              </div>
+              <button id="clearFiltersBtn" class="text-btn" type="button">Reset filters</button>
+            </div>
+
+            <div class="toolbar" aria-label="Product filters and sorting controls">
+              <label>
+                <span>Category</span>
+                <select id="categoryFilter" aria-label="Filter by category">
+                  <option value="All">All</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Budget</span>
+                <select id="priceFilter" aria-label="Filter by price range">
+                  <option value="all">All prices</option>
+                  <option value="under-1500">Under ₹1,500</option>
+                  <option value="1500-3000">₹1,500 - ₹3,000</option>
+                  <option value="3000-plus">₹3,000 & above</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Sort By</span>
+                <select id="sortSelect" aria-label="Sort products">
+                  <option value="featured">Featured</option>
+                  <option value="low-high">Price: Low to High</option>
+                  <option value="high-low">Price: High to Low</option>
+                  <option value="az">Name: A-Z</option>
+                  <option value="rating">Top Rated</option>
+                </select>
+              </label>
+            </div>
+
+            <div id="productGrid" class="product-grid" aria-live="polite"></div>
+
+            <div id="emptyState" class="empty-state hidden" aria-live="polite">
+              <h3>No products match your filters.</h3>
+              <p>Try another search or reset the current filters to explore the full collection.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div>
+            <a href="#home" class="brand footer-brand">
+              <span class="brand-mark">V</span>
+              <span>VELA</span>
+            </a>
+          </div>
+          <p>Minimal style for everyday living.</p>
+          <div class="footer-links">
+            <a href="#shop">Shop</a>
+            <a href="#offers">Offers</a>
+            <a href="#home">Support</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <aside id="cartDrawer" class="cart-drawer" aria-label="Cart panel" aria-hidden="true">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow eyebrow-dark">Your bag</p>
+          <h2>Cart</h2>
+        </div>
+        <button id="closeCart" class="close-cart" type="button" aria-label="Close cart">
+          ×
+        </button>
+      </div>
+
+      <div id="cartItems" class="cart-items" aria-live="polite"></div>
+
+      <div id="emptyCart" class="empty-cart hidden">
+        <p>Your cart is empty.</p>
+        <button id="continueShopping" class="secondary-btn" type="button">Continue shopping</button>
+      </div>
+
+      <div class="cart-footer">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="subtotal">₹0</strong>
+        </div>
+        <button id="checkoutBtn" class="checkout-btn" type="button">
+          Proceed to Checkout
+        </button>
+      </div>
+    </aside>
+
+    <div id="overlay" class="overlay hidden" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
